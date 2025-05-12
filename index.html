@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasir Laundry</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <h1>Kasir Laundry</h1>
+
+  <form id="formLaundry">
+    <label>Nama:</label><br>
+    <input type="text" id="nama" required><br><br>
+
+    <label>Layanan:</label><br>
+    <select id="layanan" required>
+      <option value="Cuci Kering">Cuci Kering - Rp5.000/kg</option>
+      <option value="Cuci Setrika">Cuci Setrika - Rp10.000/kg</option>
+    </select><br><br>
+
+    <label>Berat (kg):</label><br>
+    <input type="number" id="berat" required><br><br>
+
+    <button type="submit">Hitung & Simpan</button>
+  </form>
+
+  <hr>
+
+  <h2>Data Transaksi</h2>
+  <table border="1" id="tabelTransaksi">
+    <thead>
+      <tr>
+        <th>Nama</th>
+        <th>Layanan</th>
+        <th>Berat</th>
+        <th>Total Harga</th>
+        <th>Aksi</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
